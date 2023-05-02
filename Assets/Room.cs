@@ -5,14 +5,14 @@ using UnityEngine.Events;
 public abstract class Room : MonoBehaviour
 {
     [SerializeField] GameObject stateGO;
-    GameState gameState;
+    GameState state;
 
     void Start()
     {
-        gameState = stateGO.GetComponent<GameState>();
+        state = stateGO.GetComponent<GameState>();
     }
 
     public abstract string GetDescription();
-    public abstract IEnumerator<(string, UnityAction)> GetChoices();
+    public abstract IEnumerable<(string, UnityAction)> GetChoices();
     public abstract void Draw();
 }

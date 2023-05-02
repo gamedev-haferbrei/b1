@@ -7,16 +7,20 @@ public class Entrance : Room
 {
     public override void Draw()
     {
-        throw new System.NotImplementedException();
+
     }
 
-    public override IEnumerator<(string, UnityAction)> GetChoices()
+    public override IEnumerable<(string, UnityAction)> GetChoices()
     {
-        throw new System.NotImplementedException();
+        return new List<(string, UnityAction)>
+        {
+            ("Do this", () => { Debug.Log("foo"); }),
+            ("Do that", () => { Debug.Log("bar"); }),
+        };
     }
 
     public override string GetDescription()
     {
-        throw new System.NotImplementedException();
+        return "You are in a museum. Wow.";
     }
 }
