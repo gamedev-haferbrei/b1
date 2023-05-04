@@ -16,6 +16,12 @@ public class Main : MonoBehaviour
     Room currentRoom;
     TextMeshProUGUI description;
 
+    public void SetRoom(string room)
+    {
+        if (currentRoom != rooms[room]) rooms[room].Enter();
+        currentRoom = rooms[room];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +53,7 @@ public class Main : MonoBehaviour
         while (choicesGO.transform.childCount > 0) DestroyImmediate(choicesGO.transform.GetChild(0).gameObject);
 
         int i = 1;
-        foreach ((string label, UnityAction action) in currentRoom.GetChoices())
+        foreach ((string label, System.Func<string> action) in currentRoom.GetChoices())
         {
             GameObject choiceGO = Instantiate(choicePrefab, choicesGO.transform);
             Choice choice = choiceGO.GetComponent<Choice>();

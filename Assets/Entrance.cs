@@ -14,8 +14,8 @@ public class Entrance : Room
     {
         return new List<(string, System.Func<string>)>
         {
-            ("Do this", () => { Debug.Log("foo"); return nameof(Entrance); }),
-            ("Do that", () => { Debug.Log("bar"); return nameof(Entrance); }),
+            ("Go to the left", () => nameof(LinkRoom)),
+            ("Go to the right", () => nameof(ShadowTheHedgehogRoom)),
         };
     }
 

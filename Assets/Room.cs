@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public abstract class Room : MonoBehaviour
 {
-    [SerializeField] GameObject stateGO;
-    GameState state;
+    [SerializeField] protected GameObject stateGO;
+    protected GameState state;
 
     void Start()
     {
@@ -13,6 +13,9 @@ public abstract class Room : MonoBehaviour
     }
 
     public abstract string GetDescription();
-    public abstract IEnumerable<(string, UnityAction)> GetChoices();
+    public abstract IEnumerable<(string, System.Func<string>)> GetChoices();
     public abstract void Draw();
+
+    // Called when entering the room from a DIFFERENT room
+    public virtual void Enter() {}
 }

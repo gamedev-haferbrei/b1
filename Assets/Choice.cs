@@ -8,20 +8,20 @@ public class Choice : MonoBehaviour
 {
     Main main;
     string label;
-    UnityAction action;
+    System.Func<string> action;
 
-    public void Initialize(Main main, int id, string label, UnityAction action)
+    public void Initialize(Main main, int id, string label, System.Func<string> action)
     {
         this.main = main;
         this.label = label;
         this.action = action;
 
-        GetComponent<TextMeshProUGUI>().text = $"{id}) ${label}";
+        GetComponent<TextMeshProUGUI>().text = $"{id}) {label}";
     }
 
     public void OnChoiceSelected()
     {
-        action();
+        main.SetRoom(action());
         main.Redraw();
     }
 }
