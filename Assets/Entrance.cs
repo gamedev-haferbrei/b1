@@ -10,12 +10,12 @@ public class Entrance : Room
 
     }
 
-    public override IEnumerable<(string, UnityAction)> GetChoices()
+    public override IEnumerable<(string, System.Func<string>)> GetChoices()
     {
-        return new List<(string, UnityAction)>
+        return new List<(string, System.Func<string>)>
         {
-            ("Do this", () => { Debug.Log("foo"); }),
-            ("Do that", () => { Debug.Log("bar"); }),
+            ("Do this", () => { Debug.Log("foo"); return nameof(Entrance); }),
+            ("Do that", () => { Debug.Log("bar"); return nameof(Entrance); }),
         };
     }
 
