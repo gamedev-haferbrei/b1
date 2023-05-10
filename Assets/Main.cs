@@ -10,15 +10,18 @@ public class Main : MonoBehaviour
     [SerializeField] GameObject roomsGO;
     [SerializeField] GameObject descriptionGO;
     [SerializeField] GameObject choicesGO;
+    [SerializeField] GameObject charactersGO;
     [SerializeField] GameObject choicePrefab;
 
     Dictionary<string, Room> rooms;
+    Room lastRoom;
     Room currentRoom;
     TextMeshProUGUI description;
+    Characters characters;
 
     public void SetRoom(string room)
     {
-        if (currentRoom != rooms[room]) rooms[room].Enter();
+        lastRoom = currentRoom;
         currentRoom = rooms[room];
     }
 
@@ -34,6 +37,7 @@ public class Main : MonoBehaviour
         currentRoom = rooms[nameof(Entrance)];
 
         description = descriptionGO.GetComponent<TextMeshProUGUI>();
+        characters = charactersGO.GetComponent<Characters>();
 
         Redraw();
     }
@@ -46,9 +50,9 @@ public class Main : MonoBehaviour
 
     public void Redraw()
     {
+        characters.UndrawAll();
+        description.text = currentRoom.GetDescription(lastRoom == null ? "" : lastRoom.GetType().Name);
         currentRoom.Draw();
-
-        description.text = currentRoom.GetDescription();
 
         while (choicesGO.transform.childCount > 0) DestroyImmediate(choicesGO.transform.GetChild(0).gameObject);
 

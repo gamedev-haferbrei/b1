@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class Entrance : Room
 {
-    public override void Draw()
+    public override string GetDescription(string cameFromRoom)
     {
-
+        return "You are in a museum. Wow.";
     }
 
     public override IEnumerable<(string, System.Func<string>)> GetChoices()
@@ -19,8 +19,9 @@ public class Entrance : Room
         };
     }
 
-    public override string GetDescription()
+    public override void Draw()
     {
-        return "You are in a museum. Wow.";
+
     }
 }
+

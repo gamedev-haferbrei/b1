@@ -8,11 +8,6 @@ public class ShadowTheHedgehogRoom : Room
     bool firstTime = true;
     bool hasSeenClucko = false;
 
-    public override void Draw()
-    {
-
-    }
-
     public override IEnumerable<(string, Func<string>)> GetChoices()
     {
         var result = new List<(string, System.Func<string>)>();
@@ -24,7 +19,7 @@ public class ShadowTheHedgehogRoom : Room
         return result;
     }
 
-    public override string GetDescription()
+    public override string GetDescription(string cameFromRoom)
     {
         if (hasSeenClucko)
         {
@@ -41,7 +36,7 @@ public class ShadowTheHedgehogRoom : Room
                     "\n\nSuddenly, he looks at Clucko and remarks 'nice cock bro.' in a tone of comeradery. You aren't sure what that means, but it looks like he will let you pass.";
             } else
             {
-                return "Suddenly, he looks at Clucko and remarks 'nice cock bro.' in a tone of comeradery. You aren't sure what that means, but it looks like he will let you pass.";
+                return "Suddenly, the spiky gent looks at Clucko and remarks 'nice cock bro.' in a tone of comeradery. You aren't sure what that means, but it looks like he will let you pass.";
             }
         } else
         {
@@ -55,6 +50,18 @@ public class ShadowTheHedgehogRoom : Room
                 return "Ah, not that filthy creature again. You bet he also incentivizes drug use in minors, and he dresses like one of those depressed emo punk hippies. You will not tolerate these people around your grandchild!" +
                     "\n\n... Yeah, still no hope of passing with that kind of attitude.";
             }
+        }
+    }
+
+    public override void Draw()
+    {
+        if (hasSeenClucko)
+        {
+            DrawCharacter("Shadow Nice Cock");
+        }
+        else
+        {
+            DrawCharacter("Shadow Normal");
         }
     }
 }
