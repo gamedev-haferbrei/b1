@@ -20,6 +20,6 @@ public abstract class Room : MonoBehaviour
     public void DrawCharacter(string name) => state.characters.Get(name).gameObject.SetActive(true);
 
     public abstract string GetDescription(string cameFromRoom);
-    public abstract IEnumerable<(string, System.Func<string>)> GetChoices();
     public abstract void Draw();
+    public abstract IEnumerable<(string, System.Func<string>)> GetChoices();
 }

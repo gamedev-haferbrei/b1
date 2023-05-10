@@ -46,6 +46,8 @@ public class LinkRoom : Room
     {
         DrawCharacter("Link");
         DrawCharacter("Navi");
+
+        if (!state.hasClucko) DrawCharacter("Cucco");
     }
 
     public override IEnumerable<(string, System.Func<string>)> GetChoices()
@@ -63,7 +65,7 @@ public class LinkRoom : Room
             return nameof(LinkRoom);
         }));
 
-        result.Add(("Hit chicken", () =>
+        if (!state.hasClucko) result.Add(("Hit chicken", () =>
         {
             chickenHitCounter++;
             if (chickenHitCounter < 10)

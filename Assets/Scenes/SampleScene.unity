@@ -289,6 +289,7 @@ Transform:
   - {fileID: 1028021371}
   - {fileID: 692193985}
   - {fileID: 562972818}
+  - {fileID: 1954597352}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2026,7 +2027,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charactersGO: {fileID: 1619100252}
   characters: {fileID: 0}
+  mainGO: {fileID: 1466839631}
+  main: {fileID: 0}
   hasClucko: 0
+--- !u!1 &1954597351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954597352}
+  - component: {fileID: 1954597353}
+  m_Layer: 0
+  m_Name: Chicken Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954597352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954597351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225547198}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954597353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954597351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d848459f9a419247a58626910337de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateGO: {fileID: 1900132808}
+  background: {fileID: 21300000, guid: faffd5cb22612c645a36417365913c92, type: 3}
 --- !u!1 &1997785557
 GameObject:
   m_ObjectHideFlags: 0
