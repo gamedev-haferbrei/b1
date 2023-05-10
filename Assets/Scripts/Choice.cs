@@ -21,7 +21,11 @@ public class Choice : MonoBehaviour
 
     public void OnChoiceSelected()
     {
-        main.SetRoom(action());
+        string room = action();
+        if (room != "")
+        {
+            main.SetRoom(room);
+        }
         main.Redraw();
     }
 }

@@ -58,10 +58,11 @@ public class ShadowTheHedgehogRoom : Room
         if (hasSeenClucko)
         {
             DrawCharacter("Shadow Nice Cock");
+            DrawCharacter("Cucco");
         }
         else
         {
-            DrawCharacter("Shadow Normal");
+            DrawCharacter("Shadow");
         }
     }
 }

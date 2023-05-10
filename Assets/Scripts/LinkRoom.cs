@@ -7,11 +7,14 @@ public class LinkRoom : Room
     bool firstTime = true;
     State roomState = State.Default;
 
+    int chickenHitCounter = 0;
+
     enum State
     {
         Default,
         ScoldPeter,
         ThrowPot,
+        HitChicken,
     }
 
     public override string GetDescription(string cameFromRoom)
@@ -32,6 +35,8 @@ public class LinkRoom : Room
                 return "You firmly ask the young man to quit his temper tantrum immediately.\n\nPeter acknowledges your presence with a 'HYUH?', then continues throwing pots. Oh well, he is the boy who won't grow up after all.";
             case State.ThrowPot:
                 return "Why not fight fire with fire? You throw a pot directly at Peter's face, to teach the brazen youth a lesson. It shatters into a million pieces, revealing a shiny ruby contained within.\n\nPeter Pan seems pleased. He hands you the chicken.\n\nBetter get the poor bird away from this madman, quickly. You decide to adopt her and provisionally name her Clucko. She is safe with you now.";
+            case State.HitChicken:
+                return "You hit the chicken. Nothing happens.";
             default:
                 throw new System.Exception();
         }
@@ -50,15 +55,27 @@ public class LinkRoom : Room
         result.Add(("Scold Peter", () => {
             roomState = State.ScoldPeter;
             return nameof(LinkRoom);
-        }
-        ));
+        }));
 
         if (!state.hasClucko) result.Add(("Join in", () => {
             roomState = State.ThrowPot;
             state.hasClucko = true;
             return nameof(LinkRoom);
+        }));
+
+        result.Add(("Hit chicken", () =>
+        {
+            chickenHitCounter++;
+            if (chickenHitCounter < 10)
+            {
+                roomState = State.HitChicken;
+                return nameof(LinkRoom);
+            } else
+            {
+                return nameof(ChickenAttack);
+            }
         }
-            ));
+        ));
 
         result.Add(("Return to entrance", () => nameof(Entrance)));
 

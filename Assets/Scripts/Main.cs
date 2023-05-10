@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
+    [SerializeField] GameObject gameGroupGO;
+    [SerializeField] GameObject menuGroupGO;
+
     [SerializeField] GameObject stateGO;
     [SerializeField] GameObject roomsGO;
     [SerializeField] GameObject descriptionGO;
     [SerializeField] GameObject choicesGO;
     [SerializeField] GameObject charactersGO;
+    [SerializeField] GameObject backgroundGO;
+
     [SerializeField] GameObject choicePrefab;
 
     Dictionary<string, Room> rooms;
@@ -18,6 +25,7 @@ public class Main : MonoBehaviour
     Room currentRoom;
     TextMeshProUGUI description;
     Characters characters;
+    Image background;
 
     public void SetRoom(string room)
     {
@@ -28,18 +36,33 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameGroupGO.SetActive(false);
+        menuGroupGO.SetActive(true);
+
         rooms = new Dictionary<string, Room>();
         foreach (Room room in roomsGO.GetComponentsInChildren<Room>())
         {
             rooms.Add(room.GetType().Name, room);
         }
 
-        currentRoom = rooms[nameof(Entrance)];
-
         description = descriptionGO.GetComponent<TextMeshProUGUI>();
         characters = charactersGO.GetComponent<Characters>();
+        background = backgroundGO.GetComponent<Image>();
+    }
+
+    public void StartGame()
+    {
+        currentRoom = rooms[nameof(Entrance)];
+        gameGroupGO.SetActive(true);
+        menuGroupGO.SetActive(false);
 
         Redraw();
+    }
+
+    public void ReturnToMenu()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
     }
 
     // Update is called once per frame
@@ -53,6 +76,7 @@ public class Main : MonoBehaviour
         characters.UndrawAll();
         description.text = currentRoom.GetDescription(lastRoom == null ? "" : lastRoom.GetType().Name);
         currentRoom.Draw();
+        background.sprite = currentRoom.background;
 
         while (choicesGO.transform.childCount > 0) DestroyImmediate(choicesGO.transform.GetChild(0).gameObject);
 
