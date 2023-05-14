@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public abstract class Room : MonoBehaviour
 {
+    
     [SerializeField] protected GameObject stateGO;
     protected GameState state;
 
@@ -22,4 +23,5 @@ public abstract class Room : MonoBehaviour
     public abstract string GetDescription(string cameFromRoom);
     public abstract void Draw();
     public abstract IEnumerable<(string, System.Func<string>)> GetChoices();
+    //public abstract void PlaySound();
 }

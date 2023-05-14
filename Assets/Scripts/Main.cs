@@ -26,6 +26,8 @@ public class Main : MonoBehaviour
     TextMeshProUGUI description;
     Characters characters;
     Image background;
+    
+    
 
     public void SetRoom(string room)
     {
@@ -77,12 +79,14 @@ public class Main : MonoBehaviour
         description.text = currentRoom.GetDescription(lastRoom == null ? "" : lastRoom.GetType().Name);
         currentRoom.Draw();
         background.sprite = currentRoom.background;
+        
 
         while (choicesGO.transform.childCount > 0) DestroyImmediate(choicesGO.transform.GetChild(0).gameObject);
 
         int i = 1;
         foreach ((string label, System.Func<string> action) in currentRoom.GetChoices())
         {
+            
             GameObject choiceGO = Instantiate(choicePrefab, choicesGO.transform);
             Choice choice = choiceGO.GetComponent<Choice>();
             choice.Initialize(this, i, label, action);
