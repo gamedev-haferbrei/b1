@@ -10,8 +10,8 @@ public class Choice : MonoBehaviour
     string label;
     System.Func<string> action;
    // [SpecializeField] AudioClip mixkitcreakydooropen195;
-    [SerializeField] GameObject audioGO;
-    AudioManager audioManager;
+    //[SerializeField] GameObject audioGO;
+   // AudioManager audioManager;
     
 
     public void Initialize(Main main, int id, string label, System.Func<string> action)
@@ -25,7 +25,7 @@ public class Choice : MonoBehaviour
 
     public void OnChoiceSelected()
     {
-        audioManager.PlayAudio();
+        
         string room = action();
         //play sound here 
         if (room != "")
@@ -33,9 +33,5 @@ public class Choice : MonoBehaviour
             main.SetRoom(room);
         }
         main.Redraw();
-    }
-    public void Start()
-    {
-        audioManager = audioGO.GetComponent<AudioManager>();
     }
 }

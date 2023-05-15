@@ -20,6 +20,9 @@ public class Main : MonoBehaviour
 
     [SerializeField] GameObject choicePrefab;
 
+    [SerializeField] GameObject audioGO;
+     AudioManager audioManager;
+
     Dictionary<string, Room> rooms;
     Room lastRoom;
     Room currentRoom;
@@ -50,6 +53,7 @@ public class Main : MonoBehaviour
         description = descriptionGO.GetComponent<TextMeshProUGUI>();
         characters = charactersGO.GetComponent<Characters>();
         background = backgroundGO.GetComponent<Image>();
+        audioManager = audioGO.GetComponent<AudioManager>();
     }
 
     public void StartGame()
@@ -75,10 +79,13 @@ public class Main : MonoBehaviour
 
     public void Redraw()
     {
+        
+        audioManager.PlayAudio();
         characters.UndrawAll();
         description.text = currentRoom.GetDescription(lastRoom == null ? "" : lastRoom.GetType().Name);
         currentRoom.Draw();
         background.sprite = currentRoom.background;
+        audioManager.PlayBackground(currentRoom.audioClip);
         
 
         while (choicesGO.transform.childCount > 0) DestroyImmediate(choicesGO.transform.GetChild(0).gameObject);

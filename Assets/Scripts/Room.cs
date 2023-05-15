@@ -9,6 +9,7 @@ public abstract class Room : MonoBehaviour
     protected GameState state;
 
     public Sprite background;
+    public AudioClip audioClip;
     protected (string, System.Func<string>) returnToMenu;
 
     void Start()
