@@ -7,7 +7,7 @@ public class Entrance : Room
 {
     public override string GetDescription(string cameFromRoom)
     {
-        return "You are in a museum. Wow.";
+        return "You are a friendly grandma who has come to visit the nearby video game museum with your grandchild. However, you fell asleep on a comfy gaming chair and your grandchild is nowhere to be found.\n\nYour trusty watch says it's late evening already. Goodness!\n\nWhat will you do?";
     }
 
     public override IEnumerable<(string, System.Func<string>)> GetChoices()
