@@ -16,6 +16,7 @@ public class Entrance : Room
         {
             ("Go to the left", () => nameof(LinkRoom)),
             ("Go to the right", () => nameof(ShadowTheHedgehogRoom)),
+            ("Go straight ahead", () => nameof(PaintingRoom)),
         };
     }
 

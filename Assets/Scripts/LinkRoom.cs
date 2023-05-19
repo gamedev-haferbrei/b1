@@ -15,6 +15,7 @@ public class LinkRoom : Room
         ScoldPeter,
         ThrowPot,
         HitChicken,
+        AppleOffered,
     }
 
     public override string GetDescription(string cameFromRoom)
@@ -37,6 +38,8 @@ public class LinkRoom : Room
                 return "Why not fight fire with fire? You throw a pot directly at Peter's face, to teach the brazen youth a lesson. It shatters into a million pieces, revealing a shiny ruby contained within.\n\nPeter Pan seems pleased. He hands you the chicken.\n\nBetter get the poor bird away from this madman, quickly. You decide to adopt her and provisionally name her Clucko. She is safe with you now.";
             case State.HitChicken:
                 return "You hit the chicken. Nothing happens.";
+            case State.AppleOffered:
+                return "'Oh splendid! A wonderful meal just for me! Can I tell you a secret? The password to my secret island room is Password12345! You would have never guessed!'";
             default:
                 throw new System.Exception();
         }
@@ -78,6 +81,14 @@ public class LinkRoom : Room
             }
         }
         ));
+
+        if (state.hasApple) result.Add(("Offer apple", () => {
+            roomState = State.AppleOffered;
+            state.hasApple = false;
+            state.hasPassword = true;
+            return nameof(LinkRoom);
+        }
+            ));
 
         result.Add(("Return to entrance", () => nameof(Entrance)));
 

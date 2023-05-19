@@ -337,7 +337,9 @@ Transform:
   - {fileID: 692193985}
   - {fileID: 562972818}
   - {fileID: 1954597352}
-  - {fileID: 1436068779}
+  - {fileID: 1661608094}
+  - {fileID: 1499006961}
+  - {fileID: 1081653078}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1603,6 +1605,53 @@ MonoBehaviour:
   stateGO: {fileID: 1900132808}
   background: {fileID: 21300000, guid: e21aba6549357ab4c8bea11527abc9ed, type: 3}
   audioClip: {fileID: 8300000, guid: 772f9298db0a9f94fa699ddead375726, type: 3}
+--- !u!1 &1081653077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081653078}
+  - component: {fileID: 1081653079}
+  m_Layer: 0
+  m_Name: AppleRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081653078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081653077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1069.2585, y: 244.23718, z: 2.4466686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225547198}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1081653079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081653077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36662ae91008656418f189794d5036e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateGO: {fileID: 1900132808}
+  background: {fileID: 21300000, guid: ca53d3be9c2ea8940bf5db9d5bed0204, type: 3}
+  audioClip: {fileID: 8300000, guid: 772f9298db0a9f94fa699ddead375726, type: 3}
 --- !u!1 &1103736299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,37 +1862,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306994382}
   m_CullTransparentMesh: 1
---- !u!1 &1436068778
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1436068779}
-  m_Layer: 0
-  m_Name: PaintingRoom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1436068779
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436068778}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1069.2585, y: 244.23718, z: 2.4466686}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 225547198}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1466839631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1916,53 @@ MonoBehaviour:
   backgroundGO: {fileID: 765338164}
   choicePrefab: {fileID: 4050717010857105947, guid: 886a85dd768f60a47bf43a51164507d2, type: 3}
   audioGO: {fileID: 137356151}
+--- !u!1 &1499006960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499006961}
+  - component: {fileID: 1499006962}
+  m_Layer: 0
+  m_Name: PasswordRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499006961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499006960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1069.2585, y: 244.23718, z: 2.4466686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225547198}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499006962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499006960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7b3d67e4da4e0145abee88908f3300b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateGO: {fileID: 1900132808}
+  background: {fileID: 21300000, guid: c65bdb7d26a3e9340922394e28ccfbdf, type: 3}
+  audioClip: {fileID: 8300000, guid: 772f9298db0a9f94fa699ddead375726, type: 3}
 --- !u!1 &1596143529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2120,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be471d26d47cf784fb3051dfe069d296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1661608093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661608094}
+  - component: {fileID: 1661608095}
+  m_Layer: 0
+  m_Name: Painting Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661608094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661608093}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1069.2585, y: 244.23718, z: 2.4466686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225547198}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661608095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661608093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630ad4a3762a19945aeff3f5093f8fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateGO: {fileID: 1900132808}
+  background: {fileID: 21300000, guid: 2d3162e17c1765042863a5df5fcff3be, type: 3}
+  audioClip: {fileID: 8300000, guid: 772f9298db0a9f94fa699ddead375726, type: 3}
 --- !u!1 &1807588796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2481,8 @@ MonoBehaviour:
   mainGO: {fileID: 1466839631}
   main: {fileID: 0}
   hasClucko: 0
+  hasApple: 0
+  hasPassword: 0
 --- !u!1 &1954597351
 GameObject:
   m_ObjectHideFlags: 0
