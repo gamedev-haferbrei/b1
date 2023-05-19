@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1849299015}
   BellSound: {fileID: 8300000, guid: 78565bf902c71e94b91877a50547760a, type: 3}
+  background: {fileID: 496394152}
 --- !u!4 &137356153
 Transform:
   m_ObjectHideFlags: 0
@@ -2382,7 +2383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateGO: {fileID: 1900132808}
   background: {fileID: 21300000, guid: faffd5cb22612c645a36417365913c92, type: 3}
-  audioClip: {fileID: 8300000, guid: 772f9298db0a9f94fa699ddead375726, type: 3}
+  audioClip: {fileID: 8300000, guid: 837ba6e6f3d4b1d45b84ff018d7fa18a, type: 3}
 --- !u!1 &1997785557
 GameObject:
   m_ObjectHideFlags: 0
