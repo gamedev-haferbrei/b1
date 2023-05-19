@@ -62,6 +62,12 @@ public class Main : MonoBehaviour
         gameGroupGO.SetActive(true);
         menuGroupGO.SetActive(false);
 
+        StartCoroutine(nameof(RedrawAfterOneFrame));
+    }
+
+    public IEnumerator RedrawAfterOneFrame()
+    {
+        yield return null;
         Redraw();
     }
 

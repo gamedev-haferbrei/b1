@@ -20,6 +20,7 @@ public class Characters : MonoBehaviour
     {
         foreach (Transform t in characters.Values)
         {
+
             t.gameObject.SetActive(false);
         }
     }
