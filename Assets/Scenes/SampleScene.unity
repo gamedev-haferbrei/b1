@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 1849299015}
   BellSound: {fileID: 8300000, guid: 78565bf902c71e94b91877a50547760a, type: 3}
+  background: {fileID: 496394152}
 --- !u!4 &137356153
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ Transform:
   - {fileID: 692193985}
   - {fileID: 562972818}
   - {fileID: 1954597352}
+  - {fileID: 1436068779}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -710,7 +712,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.654
+  m_Volume: 0.359
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1811,6 +1813,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306994382}
   m_CullTransparentMesh: 1
+--- !u!1 &1436068778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1436068779}
+  m_Layer: 0
+  m_Name: PaintingRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1436068779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436068778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1069.2585, y: 244.23718, z: 2.4466686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 225547198}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1466839631
 GameObject:
   m_ObjectHideFlags: 0
