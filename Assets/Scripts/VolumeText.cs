@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
+using TMPro;
 
-public class Options : MonoBehaviour
+public class VolumeText : MonoBehaviour
 {
     [SerializeField] public Slider slider;
-    [SerializeField] public AudioMixer mixer;
-
+    public TextMeshProUGUI buttonText;
     // Start is called before the first frame update
-    
     void Start()
     {
-        mixer.GetFloat("MainVolume", out float vol);
-        slider.value = vol;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        buttonText.text = "Volume: " + Mathf.Abs(Mathf.Abs(slider.value*10/8) - 100).ToString("0") + ("%");
     }
 }
