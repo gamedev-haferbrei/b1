@@ -90,7 +90,7 @@ public class LinkRoom : Room
         }
             ));
 
-        result.Add(("Return to entrance", () => nameof(Entrance)));
+        result.Add(("Return to Mario", () => nameof(MarioRoom)));
 
         return result;
     }

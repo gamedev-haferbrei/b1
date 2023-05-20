@@ -14,7 +14,7 @@ public class Entrance : Room
     {
         return new List<(string, System.Func<string>)>
         {
-            ("Go to the left", () => nameof(LinkRoom)),
+            ("Go to the left", () => nameof(MarioRoom)),
             ("Go to the right", () => nameof(ShadowTheHedgehogRoom)),
             ("Go straight ahead", () => nameof(PaintingRoom)),
         };
@@ -25,4 +25,5 @@ public class Entrance : Room
 
     }
 }
+
 
