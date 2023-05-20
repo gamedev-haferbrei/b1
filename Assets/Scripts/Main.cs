@@ -26,6 +26,7 @@ public class Main : MonoBehaviour
     [SerializeField] GameObject options;
     [SerializeField] GameObject optionsButton;
     [SerializeField] GameObject walkthrough;
+    [SerializeField] GameObject skyrim;
 
     Dictionary<string, Room> rooms;
     Room lastRoom;
@@ -48,7 +49,7 @@ public class Main : MonoBehaviour
     {
         gameGroupGO.SetActive(false);
         menuGroupGO.SetActive(true);
-
+        skyrim.SetActive(false);
 
         rooms = new Dictionary<string, Room>();
         foreach (Room room in roomsGO.GetComponentsInChildren<Room>())
@@ -85,6 +86,10 @@ public class Main : MonoBehaviour
         SceneManager.LoadScene(currentScene);
     }
 
+    public void Skyrim()
+    {
+        skyrim.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {
