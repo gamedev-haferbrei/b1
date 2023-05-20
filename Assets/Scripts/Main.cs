@@ -21,7 +21,11 @@ public class Main : MonoBehaviour
     [SerializeField] GameObject choicePrefab;
 
     [SerializeField] GameObject audioGO;
-     AudioManager audioManager;
+    AudioManager audioManager;
+
+    [SerializeField] GameObject options;
+    [SerializeField] GameObject optionsButton;
+    [SerializeField] GameObject walkthrough;
 
     Dictionary<string, Room> rooms;
     Room lastRoom;
@@ -29,8 +33,9 @@ public class Main : MonoBehaviour
     TextMeshProUGUI description;
     Characters characters;
     Image background;
-    
-    
+
+    public bool isOptions = false;
+    public bool isWalkthrough = false;
 
     public void SetRoom(string room)
     {
@@ -43,6 +48,7 @@ public class Main : MonoBehaviour
     {
         gameGroupGO.SetActive(false);
         menuGroupGO.SetActive(true);
+        
 
         rooms = new Dictionary<string, Room>();
         foreach (Room room in roomsGO.GetComponentsInChildren<Room>())
@@ -61,6 +67,8 @@ public class Main : MonoBehaviour
         currentRoom = rooms[nameof(Entrance)];
         gameGroupGO.SetActive(true);
         menuGroupGO.SetActive(false);
+        options.SetActive(false);
+        walkthrough.SetActive(false);
 
         StartCoroutine(nameof(RedrawAfterOneFrame));
     }
@@ -105,5 +113,16 @@ public class Main : MonoBehaviour
             choice.Initialize(this, i, label, action);
             i++;
         }
+    }
+
+    public void ToggleOptions()
+    {
+        isOptions = !isOptions;
+        options.SetActive(isOptions);
+    }
+    public void ToggleWalkthrough()
+    {
+        isWalkthrough = !isWalkthrough;
+        walkthrough.SetActive(isWalkthrough);
     }
 }
