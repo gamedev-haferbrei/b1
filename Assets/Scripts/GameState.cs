@@ -14,6 +14,9 @@ public class GameState : MonoBehaviour
     public bool hasClucko = false;
     public bool hasApple = false;
     public bool hasPassword = false;
+    public bool hasPrincess = false;
+    public bool isSearchingPeach = false;
+    public bool finish = false;
 
     // Start is called before the first frame update
     void Start()

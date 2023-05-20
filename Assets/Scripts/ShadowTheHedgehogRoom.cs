@@ -14,7 +14,7 @@ public class ShadowTheHedgehogRoom : Room
 
         result.Add(("Return to entrance", () => nameof(Entrance)));
 
-        if (hasSeenClucko) result.Add(("Proceed", () => nameof(ShadowTheHedgehogRoom)));
+        if (hasSeenClucko) result.Add(("Proceed", () => nameof(PeachRoom)));   // rn missing the frame after "proceed" (which is in line 26-27)
 
         return result;
     }
